@@ -1,0 +1,26 @@
+{
+  "name": "ng-table-custom.web",
+  "homepage": "https://github.com/kumudug/ng-table-custom-binding-and-sort",
+  "authors": [
+    "Kumudu Gunasekara <kumudugunasekara@hotmail.com>"
+  ],
+  "description": "Example POC done before using ng-table in a large scale project",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "ng-table": "~0.8.3",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0",
+    "sweetalert": "~1.1.3"
+  }
+}

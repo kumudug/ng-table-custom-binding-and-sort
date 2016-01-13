@@ -15,4 +15,3 @@ Before the implementation I had to make sure I can do everything I need to do us
 2. Handle the paging using front end and the back end [requrest page from front end and serve the page data from the back end]
 3. Handle the paging from front end only [request all the data from the back end and handle the sorting in the front end]
 4. Add/Edit/Delete records inline in ng-table
-sfd
