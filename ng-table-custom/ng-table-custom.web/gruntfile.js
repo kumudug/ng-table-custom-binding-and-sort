@@ -171,6 +171,11 @@
                 tasks: ['processhtml:debug', 'bowerInstall:debug']
             }
         },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-processhtml');
@@ -179,8 +184,11 @@
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-karma');
 
     //Note: Even though default task uses concat the concatinated files are not used [to support debugging]. It's being concatinated to identify bugs early. 
     grunt.registerTask('default', ['processhtml:debug', 'bowerInstall:debug', 'jshint:beforeconcat', 'concat', 'jshint:afterconcat', 'ngAnnotate', 'watch']);
+
+    //TODO: Write release config
     grunt.registerTask('release', ['processhtml:release', 'bowerInstall:release']);
 };
