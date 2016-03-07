@@ -3,13 +3,13 @@
 
     angular
         .module('mainApp')
-        .controller('indexCtrl', indexCtrl);
+        .controller('aboutCtrl', aboutCtrl);
 
-    indexCtrl.$inject = []; 
+    aboutCtrl.$inject = []; 
 
-    function indexCtrl() {
+    function aboutCtrl() {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'indexCtrl';
-    } 
+        vm.title = 'aboutCtrl';
+    }
 })();

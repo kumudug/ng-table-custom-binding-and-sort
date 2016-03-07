@@ -123,14 +123,36 @@
                 // the location of the resulting JS file
                 dest: 'app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js'
             }
-        }
+        },
+        ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
+            app: {
+                files: {
+                    'app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js': ['app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js']
+                }
+            }
+        },
+        watch: {
+            watchScripts: {
+                files: ['<%= appSettings.mainLoc %>/main-app.mdl.js', '<%= appSettings.mainLoc %>/**/*.js'],
+                tasks: ['jshint:beforeconcat', 'concat', 'jshint:afterconcat']
+            },
+            watchHtml: {
+                files: ['index.tpl.html'],
+                tasks: ['processhtml:debug', 'bowerInstall:debug']
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-bower-install');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-ng-annotate');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['processhtml:debug', 'bowerInstall:debug', 'jshint:beforeconcat', 'concat', 'jshint:afterconcat']);
+    grunt.registerTask('default', ['processhtml:debug', 'bowerInstall:debug', 'jshint:beforeconcat', 'concat', 'jshint:afterconcat', 'ngAnnotate', 'watch']);
     grunt.registerTask('release', ['processhtml:release', 'bowerInstall:release']);
 };
