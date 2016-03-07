@@ -27,10 +27,12 @@ module.exports = function (config) {
         files: [
             //'Lib/ng-table/dist/ng-table.min.js',
             'app/data-mock/*.js',
-            'app/data/*.js',
-            'app/data/**/*.js',
-            'app/main/*.js',
-            'app/main/**/*.js',
+            //'app/data/data-app.mdl.js',
+            //'app/data/**/*.js',
+            //'app/main/*.js',
+            //'app/main/**/*.js',
+            'app/ng-table-custom.web.data.js',
+            'app/ng-table-custom.web.main.js',
             'test/unit/**/*.js'
         ],
 
