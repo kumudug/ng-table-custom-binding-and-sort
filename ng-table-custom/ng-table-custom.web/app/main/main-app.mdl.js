@@ -6,6 +6,7 @@
 
         // Custom modules 
         'dataMockApp',//mock module. Remove to run webapi backend
+        'dataApp',
 
         // 3rd Party Modules
         'ui.router',

@@ -5,15 +5,21 @@
         .module('mainApp')
         .controller('homeCtrl', homeCtrl);
 
-    homeCtrl.$inject = []; 
+    homeCtrl.$inject = ['userDataSvc', '$log']; 
 
-    function homeCtrl() {
+    function homeCtrl(userDataSvc, $log) {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'homeCtrl';
-
-        activate();
-
-        function activate() { }
+        
+        (function () {
+            userDataSvc.getUsers().then(
+                function (data) {
+                    $log.log(JSON.stringify(data));
+                }, function rejected(reason) {
+                    $log.error(reason);
+                }, function notify(update) {
+                    $log.info(update);
+                });
+        })();
     }
 })();

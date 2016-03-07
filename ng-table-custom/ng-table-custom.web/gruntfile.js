@@ -3,7 +3,9 @@
     // Configurable paths for the application
     var appConfig = {
         mainLoc: 'app/main',
-        mainConcatFile: 'main'
+        mainConcatFile: 'main',
+        dataLoc: 'app/data',
+        dataConcatFile: 'data'
     };
 
     grunt.initConfig({
@@ -103,11 +105,11 @@
         jshint: {
             options: {
                 reporter: 'checkstyle',
-                reporterOutput: 'app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.jshint.output.xml'
+                reporterOutput: 'app/<%= pkg.name %>.jshint.output.xml'
             },
             // define the files to lint
-            beforeconcat: ['gruntfile.js', 'bower.json', 'package.json', '<%= appSettings.mainLoc %>/**/*.js'],
-            afterconcat: ['app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js']
+            beforeconcat: ['gruntfile.js', 'bower.json', 'package.json', '<%= appSettings.mainLoc %>/**/*.js', '<%= appSettings.dataLoc %>/**/*.js'],
+            afterconcat: ['app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js', 'app/<%= pkg.name %>.<%= appSettings.dataConcatFile %>.js']
         },
         concat: {
             options: {
@@ -122,15 +124,28 @@
                     '<%= appSettings.mainLoc %>/**/*.js'                ],
                 // the location of the resulting JS file
                 dest: 'app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js'
+            },
+            data: {
+                // the files to concatenate
+                src: [
+                    '<%= appSettings.dataLoc %>/data-app.mdl.js',
+                    '<%= appSettings.dataLoc %>/**/*.js'],
+                // the location of the resulting JS file
+                dest: 'app/<%= pkg.name %>.<%= appSettings.dataConcatFile %>.js'
             }
         },
         ngAnnotate: {
             options: {
                 singleQuotes: true
             },
-            app: {
+            mainApp: {
                 files: {
                     'app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js': ['app/<%= pkg.name %>.<%= appSettings.mainConcatFile %>.js']
+                }
+            },
+            dataApp: {
+                files: {
+                    'app/<%= pkg.name %>.<%= appSettings.dataConcatFile %>.js': ['app/<%= pkg.name %>.<%= appSettings.dataConcatFile %>.js']
                 }
             }
         },
@@ -153,6 +168,7 @@
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    //Note: Even though default task uses concat the concatinated files are not used [to support debugging]. It's being concatinated to identify bugs early. 
     grunt.registerTask('default', ['processhtml:debug', 'bowerInstall:debug', 'jshint:beforeconcat', 'concat', 'jshint:afterconcat', 'ngAnnotate', 'watch']);
     grunt.registerTask('release', ['processhtml:release', 'bowerInstall:release']);
 };
