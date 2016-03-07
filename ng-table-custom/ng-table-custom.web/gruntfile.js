@@ -66,6 +66,18 @@
                     },
                     'angular-mocks': {
                         main: './angular-mocks.js'
+                    },
+                    'font-awesome': {
+                        main: [
+                            "./css/font-awesome.min.css",
+                            "./fonts/*"
+                        ]
+                    },
+                    'angular-ui-router': {
+                        main: "./release/angular-ui-router.min.js",
+                    },
+                    "angular-bootstrap": {
+                        "main": ["./ui-bootstrap-tpls.min.js"],
                     }
                 }
             },

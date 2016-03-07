@@ -10,6 +10,7 @@
 
         // 3rd Party Modules
         'ui.router',
+        'ui.bootstrap',
         'ngTable'
     ]);
 
