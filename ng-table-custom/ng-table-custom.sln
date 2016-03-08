@@ -35,6 +35,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F54691AC-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ng_table_custom.data", "ng_table_custom.data\ng_table_custom.data.csproj", "{4F3B6409-44CE-4C9B-ACE6-115764CC94C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ng_table_custom.service.user", "ng_table_custom.service.user\ng_table_custom.service.user.csproj", "{993A807B-EF96-43C2-A0BC-139360B90498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ng_table_custom.viewmodel", "ng_table_custom.viewmodel\ng_table_custom.viewmodel.csproj", "{46727D0E-AB43-4DF1-ACE1-7B663A183571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ng_table_custom.service.user.tests", "ng_table_custom.service.user.tests\ng_table_custom.service.user.tests.csproj", "{202E6742-FC45-4181-B958-E4BD0DFE5014}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ng_table_custom.async.mock", "ng_table_custom.async.mock\ng_table_custom.async.mock.csproj", "{E747EAD8-4C6B-4B66-803C-0B37FA6506E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,11 +61,31 @@ Global
 		{4F3B6409-44CE-4C9B-ACE6-115764CC94C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F3B6409-44CE-4C9B-ACE6-115764CC94C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F3B6409-44CE-4C9B-ACE6-115764CC94C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993A807B-EF96-43C2-A0BC-139360B90498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993A807B-EF96-43C2-A0BC-139360B90498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993A807B-EF96-43C2-A0BC-139360B90498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993A807B-EF96-43C2-A0BC-139360B90498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46727D0E-AB43-4DF1-ACE1-7B663A183571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46727D0E-AB43-4DF1-ACE1-7B663A183571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46727D0E-AB43-4DF1-ACE1-7B663A183571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46727D0E-AB43-4DF1-ACE1-7B663A183571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202E6742-FC45-4181-B958-E4BD0DFE5014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202E6742-FC45-4181-B958-E4BD0DFE5014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202E6742-FC45-4181-B958-E4BD0DFE5014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202E6742-FC45-4181-B958-E4BD0DFE5014}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E747EAD8-4C6B-4B66-803C-0B37FA6506E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E747EAD8-4C6B-4B66-803C-0B37FA6506E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E747EAD8-4C6B-4B66-803C-0B37FA6506E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E747EAD8-4C6B-4B66-803C-0B37FA6506E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4F3B6409-44CE-4C9B-ACE6-115764CC94C2} = {F54691AC-7F0F-4B52-8314-042D7B38261E}
+		{993A807B-EF96-43C2-A0BC-139360B90498} = {BCDADD88-44DD-4D54-B9EC-869248E19C48}
+		{46727D0E-AB43-4DF1-ACE1-7B663A183571} = {F54691AC-7F0F-4B52-8314-042D7B38261E}
+		{202E6742-FC45-4181-B958-E4BD0DFE5014} = {BCDADD88-44DD-4D54-B9EC-869248E19C48}
+		{E747EAD8-4C6B-4B66-803C-0B37FA6506E9} = {732C69FF-7E81-439D-BD9A-C1C87EED779D}
 	EndGlobalSection
 EndGlobal

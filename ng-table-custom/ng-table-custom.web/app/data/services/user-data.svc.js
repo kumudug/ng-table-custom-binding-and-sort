@@ -13,13 +13,14 @@
             getUser: _getUser
         };
 
-        var resource = $resource('/api/users/:userId', { userId: '@userId'});
+        var resourceAll = $resource('/api/user/all', { });
+        var resourceSingle = $resource('/api/user/byid/:userId', { userId: '@userId' });
 
         return service;
 
         function _getUsers() {
             var deferred = $q.defer();
-            resource.query({},
+            resourceAll.query({},
 				function (data) {
 				    deferred.resolve(data);
 				},
@@ -31,7 +32,7 @@
 
         function _getUser(userId) {
             var deferred = $q.defer();
-            resource.get({ userId: userId },
+            resourceSingle.get({ userId: userId },
 				function (data) {
 				    deferred.resolve(data);
 				},

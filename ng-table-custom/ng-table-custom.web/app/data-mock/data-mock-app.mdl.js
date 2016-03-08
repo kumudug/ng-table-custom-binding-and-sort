@@ -76,8 +76,8 @@
             }
         ];
         
-        var userUrl = "/api/users"
-        var editingRegex = new RegExp(userUrl + "/[0-9][0-9]*", ''); // regex to define the url when getting 1 item
+        var userUrl = "/api/user/all"
+        var editingRegex = new RegExp("api/user/byid/[0-9][0-9]*", ''); // regex to define the url when getting 1 item
 
         $httpBackend.whenGET(userUrl).respond(users);
 
