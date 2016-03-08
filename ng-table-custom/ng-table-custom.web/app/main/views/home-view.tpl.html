@@ -1,33 +1,36 @@
 ﻿<div class="home-view">
     <table ng-table="vm.tableParams" class="table table-striped table-bordered">
         <tr ng-repeat="row in $data" ng-form name="tForm">
-            <td ng-switch="row.isEditing" title="'First Name'">
+            <td ng-switch="row.isEditing" title="'First Name'" sortable="'firstName'">
                 <span ng-switch-default>
                     <label>{{row.firstName}}</label>
                 </span>
                 <span ng-switch-when="true">
-                    <input type="text" ng-model="row.firstName" class="form-control"/>
+                    <input type="text" ng-model="row.firstName" class="form-control" />
                 </span>
             </td>
-            <td ng-switch="row.isEditing" title="'Last Name'">
+            <td ng-switch="row.isEditing" title="'Last Name'" sortable="'lastName'">
                 <span ng-switch-default>
                     <label>{{row.lastName}}</label>
                 </span>
                 <span ng-switch-when="true">
-                    <input type="text" ng-model="row.lastName" class="form-control"/>
+                    <input type="text" ng-model="row.lastName" class="form-control" />
                 </span>
             </td>
-            <td ng-switch="row.isEditing" title="'Date of Birth'">
+            <td ng-switch="row.isEditing" title="'Date of Birth'" sortable="'dob'">
                 <span ng-switch-default>
                     <label>{{row.dob | date:'dd/MM/yyyy'}}</label>
                 </span>
-                <span ng-switch-when="true">
-                    <input type="text" ng-model="row.dob" class="form-control"/>
-                </span>
+                <div ng-switch-when="true" class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="row.dob" is-open="row.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" readonly/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openDatePopup(row)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </div>
             </td>
-            <td ng-switch="row.isEditing" >
+            <td ng-switch="row.isEditing" class="editRow">
                 <span ng-switch-default class="btn btn-default" ng-click="row.isEditing = !row.isEditing">
-                        <i class="fa fa-pencil-square-o edit-btn"></i>
+                    <i class="fa fa-pencil-square-o edit-btn"></i>
                 </span>
                 <span ng-switch-when="true" class="btn btn-default" ng-click="row.isEditing = !row.isEditing">
                     <i class="fa fa-floppy-o save-btn"></i>
