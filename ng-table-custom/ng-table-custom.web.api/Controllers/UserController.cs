@@ -40,7 +40,7 @@
         [HttpGet]
         [Route("all")]
         [ResponseType(typeof(List<UserVM>))]
-        public async Task<IHttpActionResult> GetStorageAccounts()
+        public async Task<IHttpActionResult> GetUsers()
         {
             var users = await _userService.GetAllUsers();
 
