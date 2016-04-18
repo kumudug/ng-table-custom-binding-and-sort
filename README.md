@@ -1,3 +1,4 @@
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 # ng-table-custom-binding-and-sort
 Example POC done before using ng-table in a large scale project
 
